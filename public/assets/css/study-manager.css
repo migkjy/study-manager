@@ -1,0 +1,22 @@
+.addMember {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addMember .item {
+    margin: 0.5rem;
+}
+
+.memberList{
+    display: flex;
+    justify-content: space-between;
+}
+
+.memberList .item {
+    cursor: pointer; 
+}
+
+.memberList .hide {
+    text-decoration: line-through;
+}

@@ -42,9 +42,11 @@ export default class Meeting extends React.Component {
   render() {
     return (
       <div>
-        <FlipMove >
-          {this.renderMembers()}
-        </FlipMove>
+        <ul>
+          <FlipMove maintainContainerHeight>
+            {this.renderMembers()}
+          </FlipMove>
+        </ul>
       </div>
     );
   }

@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
-export const Dues = new Mongo.Collection('dues');
+export const Ledger = new Mongo.Collection('ledger');
 
 if (Meteor.isServer) {
-  Meteor.publish('dues', () => Dues.find({}));
+  Meteor.publish('ledger', () => Ledger.find({}));
 }

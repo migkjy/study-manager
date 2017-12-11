@@ -24,9 +24,19 @@ export default class MemberListFilter extends React.Component {
   }
   render() {
     return (
-      <div>
-        <button onClick={() => Session.set('memberEditMode', !this.state.memberEditMode)}>Edit</button>
-      </div>
+      <ul className="actions">
+        <li>
+          <a
+            href="#"
+            className="button big"
+            onClick={(e) => {
+              e.preventDefault();
+              Session.set('memberEditMode', !this.state.memberEditMode);
+            }}
+          >Edit Member
+          </a>
+        </li>
+      </ul>
     );
   }
 }

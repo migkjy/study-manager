@@ -9,24 +9,28 @@ export default class Member extends React.Component {
     if (Session.get('memberEditMode')) {
       return (
         <span>
-          <button onClick={() =>
+          <a onClick={() =>
             Meteor.call('members.setHide', this.props._id, !this.props.hide)}
-          >Hide
-          </button>
-          <button onClick={() =>
+          >{` Hide `}
+          </a>
+          <a onClick={() =>
             Meteor.call('members.remove', this.props._id)}
-          >Delete
-          </button>
+          >{` Delete `}
+          </a>
         </span>
       );
     }
   }
   render() {
     return (
-      <div>
-        name: {this.props.name} / hide: {this.props.hide.toString()} / admin: {this.props.admin.toString()}
-        {this.renderEditMembers()}
-      </div>
+      <li className="memberList">
+        <span className={this.props.hide ? 'memberList hide' : ''}>
+          name: {this.props.name} / hide: {this.props.hide.toString()} / admin: {this.props.admin.toString()}
+        </span>
+        <span className="memberList item">
+          {this.renderEditMembers()}
+        </span>
+      </li>
     );
   }
 }

@@ -8,9 +8,9 @@ export default () => {
     e.target.name.value = '';
   };
   return (
-    <form onSubmit={onSubmit}>
-      <input type="text" name="name" />
-      <button type="submit">Add Member</button>
+    <form onSubmit={onSubmit} className="addMember">
+      <input type="text" name="name" className="addMember item" />
+      <button type="submit" className="addMember item">Add Member</button>
     </form>
   );
 };
